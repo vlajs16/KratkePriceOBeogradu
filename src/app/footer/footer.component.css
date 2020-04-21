@@ -1,0 +1,26 @@
+.wrapper{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: #513830;
+    font-family: 'Parisienne', cursive;
+    align-items: center;
+}
+
+.text{
+    margin: 0;
+    font-size: 1.6em;
+    cursor: pointer;
+    color: #6FA1A0;
+    transition: all ease-in-out .4s;
+}
+
+.text:hover{
+    color:#F2EEE5 ;
+}
+
+.fa{
+    font-style: italic;
+}

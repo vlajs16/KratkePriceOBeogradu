@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="../../assets/images/logo.png" alt="Kratke-price-o-Beogradu-Logo">
+  </a>
+  <button class="navbar-toggler" type="button" (click) = "isCollapsed = !isCollapsed"
+          data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" 
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" [collapse] = "isCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Beogradske priče</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Kviz</a>
+      </li>
+    </ul>
+  </div>
+</nav>
