@@ -33,12 +33,24 @@ img{
     color: #F2EEE5;
 }
 
+.nav-img{
+    transition: all ease-in-out .4s;
+}
+
+.nav-img:hover{
+    transform: rotate(-20deg) scale3d(1.5,1.5,1.5);
+}
+
 @media(min-width: 768px){
     .navbar-nav{
         margin-right: 10px!important;
         margin-left: auto!important;
     }
     
+    .nav-img{
+        margin-left: 45px;
+    }
+
     .navbar-nav .nav-item{
         margin-right: 45px;
         margin-top: 0px;

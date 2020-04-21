@@ -21,6 +21,12 @@
     color:#F2EEE5 ;
 }
 
+.text:hover .fa{
+    transform: rotate(-20deg) scale3d(1.5,1.5,1.5);
+    color: #6FA1A0;
+}
+
 .fa{
     font-style: italic;
+    transition: all .4s ease-in-out;
 }
