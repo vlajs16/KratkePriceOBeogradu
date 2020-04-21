@@ -8,7 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
+import { AboutComponent } from './home/about/about.component';
+import { CitatiComponent } from './home/citati/citati.component';
+import { RangListaComponent } from './home/rang-lista/rang-lista.component';
+import { PartneriComponent } from './home/partneri/partneri.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { CarouselComponent } from './carousel/carousel.component';
       NavComponent,
       FooterComponent,
       HomeComponent,
-      CarouselComponent
+      CarouselComponent,
+      AboutComponent,
+      CitatiComponent,
+      RangListaComponent,
+      PartneriComponent
    ],
    imports: [
       BrowserModule,

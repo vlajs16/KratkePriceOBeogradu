@@ -1,6 +1,9 @@
 .navbar{
     background-color: #513830;
     font-family: 'Raleway', sans-serif;
+    position: absolute;
+    z-index: 10;
+    width: 100%
 }
 
 img{

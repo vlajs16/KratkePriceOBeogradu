@@ -1,0 +1,88 @@
+.content{
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(rgba(111, 161, 160, 0.904), rgba(111, 161, 160, .97)),
+         url('../../../assets/images/paper-texture.jpg') no-repeat center 50%/cover;
+         overflow: hidden;
+    color: #513830;
+    -webkit-box-shadow: -1px -7px 25px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -7px 25px -2px rgba(0,0,0,0.75);
+    box-shadow: -1px -7px 25px -2px rgba(0,0,0,0.75);
+}
+
+.naslov{
+    font-family: 'Parisienne', cursive;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    
+    font-size: 3.5em;
+}
+
+
+.table{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 25px;
+    color: #6FA1A0;
+    background-color: rgba(35, 20, 16,.8);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+thead tr{
+    background-color: rgba(35, 20, 16,.8);
+    border-radius: 25px 0 0 25px!important;
+    border-bottom: rgba(111, 161, 160, 1) 2px solid;
+}
+
+thead th{
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+th, td{
+    border:rgba(111, 161, 160, 0.904) 1px solid!important;
+}
+
+tbody th{
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+td{
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+th:first-child{
+    border-radius: 25px 0 0 0;
+    border: unset;
+    border-right: rgba(111, 161, 160, 1) 1px solid;
+}
+
+th:last-child{
+    border: unset;
+    border-radius: 0 25px 0 0;
+}
+
+.w-70{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+
+.second{
+    transform: rotateX(180deg)
+}
+
+@media(min-width: 768px){
+    .table{
+        width: 70%;
+    }
+
+    .w-70{
+        width: 30%;
+    }
+}

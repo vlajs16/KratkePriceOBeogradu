@@ -1,0 +1,31 @@
+.content{
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(rgba(111, 161, 160, 0.904), rgba(111, 161, 160, .97)), 
+        url(../../../assets/images/about.png) no-repeat center 50%/cover,
+         url('../../../assets/images/paper-texture.jpg') no-repeat center 50%/cover;
+         overflow: hidden;
+    /* background-attachment: fixed; */
+    color: #513830;
+    padding-bottom: 35px;
+}
+
+.naslov{
+    font-family: 'Parisienne', cursive;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10%;
+    font-size: 3.5em;
+}
+
+.text{
+    width: 90%;
+    margin: 10px auto;
+}
+
+@media(min-width: 768px){
+    .text{
+        width: 60%;
+    }
+}

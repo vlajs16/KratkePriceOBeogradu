@@ -7,11 +7,12 @@
     background-color: #513830;
     font-family: 'Parisienne', cursive;
     align-items: center;
+    text-align: center;
 }
 
 .text{
     margin: 0;
-    font-size: 1.6em;
+    font-size: 2em;
     cursor: pointer;
     color: #6FA1A0;
     transition: all ease-in-out .4s;

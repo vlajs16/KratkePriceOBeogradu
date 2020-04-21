@@ -1,0 +1,68 @@
+.content{
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(rgba(35, 20, 16, 0.82), rgba(35, 20, 16, .97)), 
+        url(../../../assets/images/belgrade/bgd3.jpg) no-repeat center 15%/cover;
+    background-attachment: fixed;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    -webkit-box-shadow: inset -1px 7px 20px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset -1px 7px 20px -2px rgba(0,0,0,0.75);
+    box-shadow: inset -1px 7px 20px -2px rgba(0,0,0,0.75);
+}
+
+.citat{
+    padding: 20px;
+    width: 90%;
+    height: 50vh;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #F2EEE5;
+}
+
+.fa{
+    width: 100%;
+    font-style: italic;
+    font-size: 3.2em;
+}
+
+.fa-quote-right{
+    text-align: end;
+}
+
+.citat-content{
+    font-style: italic;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.white{
+    color: #F2EEE5;
+}
+
+.citat-author{
+    color: #6FA1A0;
+    width: 100%;
+    text-align: end;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+@media(min-width: 768px){
+    .content{
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 0;
+    }
+
+    .citat{
+        width: 30%;
+    }
+}
+
