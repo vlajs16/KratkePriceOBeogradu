@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-  <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" 
+     [ngClass]="{'home': isHomePage()}">
+  <a class="navbar-brand" [routerLink]="['']">
     <img src="../../assets/images/logo.png" alt="Kratke-price-o-Beogradu-Logo" class="nav-img">
   </a>
   <button class="navbar-toggler" type="button" (click) = "isCollapsed = !isCollapsed"
@@ -11,7 +12,7 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault" [collapse] = "isCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Beogradske priče</a>
+        <a class="nav-link" [routerLink]="['/price']">Beogradske priče</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Kviz</a>

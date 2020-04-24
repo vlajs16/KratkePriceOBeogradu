@@ -1,9 +1,13 @@
 .navbar{
     background-color: #513830;
     font-family: 'Raleway', sans-serif;
-    position: absolute;
-    z-index: 10;
+    position: relative;
     width: 100%
+}
+
+.home{
+    position: absolute!important;
+    z-index: 10;
 }
 
 img{
@@ -42,6 +46,10 @@ img{
 
 .nav-img:hover{
     transform: rotate(-20deg) scale3d(1.5,1.5,1.5);
+}
+
+.navbar{
+    overflow: hidden;
 }
 
 @media(min-width: 768px){

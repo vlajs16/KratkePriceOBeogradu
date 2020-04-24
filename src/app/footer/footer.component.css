@@ -16,6 +16,7 @@
     cursor: pointer;
     color: #6FA1A0;
     transition: all ease-in-out .4s;
+    outline: none;
 }
 
 .text:hover{
@@ -31,3 +32,5 @@
     font-style: italic;
     transition: all .4s ease-in-out;
 }
+
+

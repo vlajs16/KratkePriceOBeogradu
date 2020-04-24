@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   isCollapsed = true;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  isHomePage(){
+    const url = this.route.snapshot['_routerState'].url;
+    if(url === '/') { return true; }
+    return false;
   }
 
 }

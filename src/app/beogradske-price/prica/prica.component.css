@@ -1,0 +1,76 @@
+.content{
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(rgba(111, 161, 160, 0.904), rgba(111, 161, 160, .97)), 
+        url(../../../assets/images/about.png) no-repeat center 50%/cover,
+         url('../../../assets/images/paper-texture.jpg') no-repeat center 50%/cover;
+         overflow: hidden;
+    color: #513830;
+    padding-bottom: 35px;
+}
+
+
+video{
+    margin: 0 auto;
+    display: block;
+    width: 95%;
+    -webkit-box-shadow: -1px 6px 24px -2px rgba(0,0,0,0.71);
+-moz-box-shadow: -1px 6px 24px -2px rgba(0,0,0,0.71);
+box-shadow: -1px 6px 24px -2px rgba(0,0,0,0.71);
+}
+
+.text-price{
+    margin: 40px auto;
+    width: 90%;
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.naslov{
+    font-family: 'Parisienne', cursive;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    font-size: 3.5em;
+}
+
+@media(min-width: 768px){
+    .price{
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .text-price{
+        font-size: 1.2em;
+        text-align: justify;
+        width: 70%;
+    }
+    
+    video{
+        width: 60%;
+    }
+
+    .prica{
+        width: 30%;
+        height: 40vh;
+    }
+}
+
+@media(min-width: 1080px){
+    video{
+        width: 55%;
+    }
+
+    .text-price{
+        margin-top: 50px;
+        width: 60%;
+    }
+
+    .price{
+        width: 70%;
+    }
+}

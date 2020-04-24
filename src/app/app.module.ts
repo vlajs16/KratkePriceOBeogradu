@@ -13,7 +13,10 @@ import { AboutComponent } from './home/about/about.component';
 import { CitatiComponent } from './home/citati/citati.component';
 import { RangListaComponent } from './home/rang-lista/rang-lista.component';
 import { PartneriComponent } from './home/partneri/partneri.component';
-
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { BgdPriceComponent } from './beogradske-price/bgd-price/bgd-price.component';
+import { PricaComponent } from './beogradske-price/prica/prica.component';
 
 @NgModule({
    declarations: [
@@ -25,13 +28,16 @@ import { PartneriComponent } from './home/partneri/partneri.component';
       AboutComponent,
       CitatiComponent,
       RangListaComponent,
-      PartneriComponent
+      PartneriComponent,
+      BgdPriceComponent,
+      PricaComponent
    ],
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
       CollapseModule.forRoot(),
-      CarouselModule.forRoot()
+      CarouselModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [],
    bootstrap: [

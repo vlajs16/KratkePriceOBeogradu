@@ -52,3 +52,7 @@ carousel{
         height: auto!important;
     }
 }
+
+video{
+    margin: 0 auto!important;
+}
