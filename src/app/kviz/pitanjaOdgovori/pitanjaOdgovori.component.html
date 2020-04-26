@@ -1,0 +1,30 @@
+<div class="surround">
+  <h1 class="naslov">Kviz</h1>
+  <div class="pitanja">
+
+    <form #kvizForm="ngForm" (ngSubmit)="send(kvizForm)">
+
+      <div class="pitanja" *ngFor="let pitanje of pitanja">
+        <h3 class="pitanje"> {{pitanje.vrednost}}</h3>
+        
+        <form #pitanje="ngForm">
+          <div *ngFor="let odgovor of pitanje.odgovori">
+            <div class="odg" >
+              <input type="radio" name="{{odgovor.odgovorId}}" class="odgovor" value="{{odgovor}}" >
+              <p class="vrednost">{{odgovor.vrednost}}</p>
+            </div>
+          </div>
+        </form>
+
+        
+      </div>
+      
+      <div class="form-group button">
+        <button [disabled]="!kvizForm.valid" type="submit" class="btn btn-element">Zavrsi kviz</button>
+      </div>
+    </form>
+
+<!-- (change)="onSelectionChange(odgovor)" -->
+
+  </div>
+</div>
