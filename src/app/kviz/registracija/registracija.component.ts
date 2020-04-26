@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class RegistracijaComponent implements OnInit {
   user: any = {};
   provera = false;
+  provera2 = false;
 
   constructor(private authService: RegistrationServiceService, private router: Router) { }
 
@@ -20,10 +21,15 @@ export class RegistracijaComponent implements OnInit {
     this.authService.register(this.user).subscribe(() => {
       console.log('Uspesna registracija');
       this.provera = true;
+      this.router.navigate(['/kviz/pitanja']);
     }, error => {
       console.log(error);
       this.provera = false;
     });
+  }
+
+  change(){
+    this.provera2 = !this.provera2;
   }
 
   isRegistred(){
@@ -31,5 +37,10 @@ export class RegistracijaComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  close(){
+    if(this.provera2)
+      this.provera2 = false;
   }
 }

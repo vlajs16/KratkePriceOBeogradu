@@ -1,7 +1,7 @@
 <div class="content">
   <h1 class="naslov">Kratke priče o Beogradu</h1>
   <div class="price">
-    <div class="prica" *ngFor="let prica of price" [routerLink]="['/price/id']">
+    <div class="prica" *ngFor="let prica of price" [routerLink]="['/price/', prica.pricaID]">
       <img src="../../../assets/images/price/{{prica?.nazivSlike}}" alt="{{prica.naziv}}" class="prica-img">
       <h3 class="prica-naslov">{{prica.naziv}}</h3>
     </div>

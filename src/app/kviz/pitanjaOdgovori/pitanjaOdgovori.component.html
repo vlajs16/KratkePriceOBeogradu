@@ -1,30 +1,50 @@
-<div class="surround">
-  <h1 class="naslov">Kviz</h1>
-  <div class="pitanja">
+<div class="content">
 
-    <form #kvizForm="ngForm" (ngSubmit)="send(kvizForm)">
-
-      <div class="pitanja" *ngFor="let pitanje of pitanja">
-        <h3 class="pitanje"> {{pitanje.vrednost}}</h3>
-        
-        <form #pitanje="ngForm">
-          <div *ngFor="let odgovor of pitanje.odgovori">
-            <div class="odg" >
-              <input type="radio" name="{{odgovor.odgovorId}}" class="odgovor" value="{{odgovor}}" >
-              <p class="vrednost">{{odgovor.vrednost}}</p>
+  <div class="surround">
+    <h1 class="naslov">Kviz</h1>
+    <div class="pitanja">
+  
+      <form [formGroup]="quizForm" (submit)="sendAnswer()">
+  
+        <div class="pitanja" *ngFor="let pitanje of pitanja">
+          <h3 class="pitanje"> {{pitanje.vrednost}}</h3> 
+          
+          
+             <div *ngFor="let odgovor of pitanje.odgovori">
+              <label class="odg">
+                <input type="radio" value="{{odgovor.odgovorID}}" class="odgovor" formControlName="pitanje{{pitanje.pitanjeID}}" >
+                <p class="vrednost">{{odgovor.vrednost}}</p>
+              </label>
             </div>
+  
+          
+        </div>
+  
+        <!-- <div *ngFor="let quest of pitanja">
+          <label>{{quest.vrednost}}</label>
+          <div>
+            <label *ngFor="let ans of quest.odgovori">
+              <input type="radio" value="{{ans.odgovorID}}" formControlName="pitanje{{quest.pitanjeID}}">
+              {{ans.vrednost}}
+          </label>
           </div>
-        </form>
-
+        </div> -->
         
-      </div>
-      
-      <div class="form-group button">
-        <button [disabled]="!kvizForm.valid" type="submit" class="btn btn-element">Zavrsi kviz</button>
-      </div>
-    </form>
+        <div class="form-group button">
+          <button [disabled]="!quizForm.valid" type="submit" class="btn btn-element">Zavrsi kviz</button>
+        </div>
+      </form>
+  
+  
+    </div>
+  </div>
+</div>
 
-<!-- (change)="onSelectionChange(odgovor)" -->
-
+<div class="black" [ngClass]="{'show': prikazi}" (click)="close()">
+  <div class="rezultat">
+    <div class="rezultat-header"><span class="fa fa-times"></span></div>
+    <div class="rezultat-body">
+      <p>{{poeni}}</p>
+    </div>
   </div>
 </div>

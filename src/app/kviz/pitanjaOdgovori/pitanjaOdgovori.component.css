@@ -1,6 +1,18 @@
-.surround{
+.content{
     min-height: 100vh;
     width: 100%;
+    background: radial-gradient(rgba(111, 161, 160, 0.904), rgba(111, 161, 160, .97)),
+         url('../../../assets/images/paper-texture.jpg') no-repeat center 50%/cover;
+         overflow: hidden;
+    color: #513830;
+    -webkit-box-shadow: -1px -7px 25px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -7px 25px -2px rgba(0,0,0,0.75);
+    box-shadow: -1px -7px 25px -2px rgba(0,0,0,0.75);
+}
+
+.surround{
+    min-height: 100vh;
+    width: 95%;
     background: radial-gradient(rgba(81, 56, 48, 0.377), rgba(81, 56, 48, 0.356));
     color: #513830;
     margin: 50px auto;
@@ -32,13 +44,26 @@
     font-weight: 500;
     margin-left: 40px;
 }
+
 .odg{
+    /* display: flex;
+    flex-direction: row;
+    align-items: center; */
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
+    align-items: baseline;
 }
+
 p{
     margin-left: 10px;
+}
+
+p.vrednost{
+    margin-top: 0;
+    font-size: 1.3em;
+    margin: 0;
+    margin-left: 10px;
+
 }
 
 .button{
@@ -56,10 +81,101 @@ p{
     color: white;
     transition: all .4s ease-in-out;
     flex: 1;
+    outline: none;
 }
 .btn-element:hover:enabled{
     background-color: rgba(81, 56, 48, 0.089);
     color: #513830;
+    outline: none;
+}
+
+.btn-element:focus{
+    outline: none;
+}
+
+.rezultat{
+    /* display: none; */
+    min-height: 50vh;
+    /* background: white; */
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 120;
+    top: 25vh;
+    left: 0;
+    background-color: rgba(81,56,48,0.06);
+}
+
+.rezultat-header{
+    color: rgba(81,56,48);
+    height: 50px;
+    /* background-color: rgba(0, 0, 0, 0.116); */
+    /* background: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.rezultat-header .fa{
+    font-size: 2em;
+    margin-right: 12px;
+    border: solid 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 1%;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+.black:hover span.fa{
+    opacity: 1;
+}
+
+.show{
+    display: block;
+}
+
+.op-6{
+    opacity: 0.5;
+}
+
+.rezultat-body{
+    height: calc(40vh - 50px);
+    color: #F2EEE5;
+    width: 100%;
+    /* background-color: violet; */
+    /* background-color: rgba(0, 0, 0, 0.055); */
+    display: flex;
+    align-items: center;
+    flex-direction: row
+}
+
+.rezultat-body p{
+    /* background: bisque; */
+    margin: 0 auto;
+    width: 94%;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.black{
+    background-color: rgba(0, 0, 0, 0.39);
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.show{
+    display: block;
 }
 
 @media(min-width: 768px){
@@ -74,5 +190,11 @@ p{
     }
     .odg{
         margin-left: 10px;
+    }
+
+    
+    .rezultat{
+        width: 50%;
+        left: 25%;
     }
 }

@@ -1,22 +1,9 @@
 <div class="content">
   <h1 class="naslov">{{prica.naziv}}</h1>
 
-    <video controls src="https://res.cloudinary.com/djoelp3gm/video/upload/v1587747528/A_day_in_Belgrade_-_Motion_Time-lapse_qro5nb.mp4"></video>
-
-
-
+  <video controls src="{{prica?.videoUrl || 'https://res.cloudinary.com/djoelp3gm/video/upload/v1587747528/A_day_in_Belgrade_-_Motion_Time-lapse_qro5nb.mp4'}}"></video>
   <p class="text-price">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil quo earum, alias voluptatem laborum aliquid aspernatur, veritatis accusamus porro iste architecto vel eaque minus quia dolore optio corporis.
-    Incidunt, ab! Iure quas, odio eligendi non eveniet soluta expedita excepturi et distinctio quos nisi aliquid exercitationem, quo sequi assumenda doloremque nulla autem beatae corporis tenetur consectetur voluptatibus ipsa atque.
-    Quasi, totam dicta? Recusandae est voluptates, accusantium fugit velit numquam reprehenderit placeat ratione eaque eius aspernatur sunt minima nobis nam veniam. Voluptatum incidunt natus repudiandae dolor corrupti repellat deserunt libero.
-    <br/>
-    <br>
-    Totam id necessitatibus eligendi quas voluptatum consectetur deserunt nihil itaque? Consectetur aut pariatur veniam. Reprehenderit placeat repellat delectus ipsam fuga laborum enim debitis temporibus illum. Ullam impedit iste repellat reprehenderit.
-    Veniam, consequuntur. Molestias dolores, quia magnam corporis rerum iure vel eius perferendis quo error ab fuga quibusdam veniam laudantium animi, odit illum natus nulla commodi ipsam cum ex tempore. Tempore.
-    Assumenda a officia nobis vel aspernatur ipsum temporibus illum ipsa eos, cupiditate enim quod sequi voluptatem id eius natus unde mollitia perferendis nesciunt. Nam fugit velit omnis tempore voluptates quam.
-    Voluptas nemo officia quam sapiente doloremque ratione corporis quasi? Nulla quas ad est quaerat vero, repudiandae praesentium adipisci? Tenetur numquam excepturi vitae minus. Nihil ad natus ab rerum vel. Accusamus?
-    Sequi dicta placeat hic facilis, non maiores at iste doloribus pariatur iusto ea, eius nam alias labore magni? Facere molestias numquam laboriosam, excepturi officia sapiente incidunt reprehenderit tempore iure laudantium!
-
+    {{prica.text}}
   </p>
 </div>
 

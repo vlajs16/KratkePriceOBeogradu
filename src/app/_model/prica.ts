@@ -1,7 +1,7 @@
 export interface Prica {
-    pricaId: number;
+    pricaID: number;
     naziv: string;
     text?: string;
     nazivSlike?: string;
-    urlVideo?: string;
+    videoUrl?: string;
 }

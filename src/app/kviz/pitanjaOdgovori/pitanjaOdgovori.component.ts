@@ -3,7 +3,7 @@ import { Pitanje } from 'src/app/_model/pitanje';
 import { PitanjeService } from 'src/app/_services/pitanje.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegistrationServiceService } from 'src/app/_services/registrationService.service';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pitanjaOdgovori',
@@ -12,71 +12,67 @@ import { NgForm } from '@angular/forms';
 })
 export class PitanjaOdgovoriComponent implements OnInit {
   pitanja: Pitanje[];
-  popunjena: Pitanje[];
-  rbrPitanja: number;
+  quizForm: FormGroup;
+  poeni: string;
+  prikazi = false;
 
   constructor(private pitanjaService: PitanjeService, private route: ActivatedRoute,
-              private authService: RegistrationServiceService) {
-                    // this.router.routeReuseStrategy.shouldReuseRoute = function() {
-    //   return false;
-    // };
+              private authService: RegistrationServiceService, private router: Router) {
   }
 
   ngOnInit() {
-    this.getPitanja();
-    this.rbrPitanja = 0;
-  }
-
-
-  // brojPitanja(){
-  //   this.rbrPitanja = this.rbrPitanja + 1;
-  //   return this.rbrPitanja;
-  // }
-
-  getPitanja(){
-    this.pitanjaService.getPitanja(this.authService.decodedToken.nameid).subscribe((pitanja: Pitanje[]) => {
-      this.pitanja = pitanja;
-      this.popunjena = pitanja;
-      this.izmeniOdgovore();
-    }, error => {
-      console.log(error);
+    this.route.data.subscribe(data => {
+      this.pitanja = data['pitanja'];
     });
+    this.createQuizForm();
   }
 
-  izmeniOdgovore(){
+
+  createQuizForm(){
+    let group: any = {};
+
     this.pitanja.forEach(pitanje => {
-      pitanje.odgovori.forEach(odgovor => {
-        odgovor.tacan = false;
-      });
+      group['pitanje' + pitanje.pitanjeID] = new FormControl('', Validators.required);
+    });
+
+    this.quizForm = new FormGroup(group);
+  }
+
+
+  createAnswers(){
+    if (!this.quizForm.valid){ return; }
+
+    this.pitanja.forEach(pitanje => {
+      let odgovorId: number = this.quizForm.get('pitanje' + pitanje.pitanjeID).value;
+      pitanje.odgovor = pitanje.odgovori.find(x => x.odgovorID == odgovorId);
     });
   }
 
-  send(kvizForm: NgForm){
-    console.log(kvizForm.control.value);
-    this.pitanjaService.sendAnswers(this.authService.decodedToken.nameid, this.pitanja).subscribe(() => {
-      console.log('Uspešno poslati odgovori');
+  sendAnswer(){
+    this.createAnswers();
+
+    this.pitanjaService.sendAnswers(this.authService.decodedToken.nameid, this.pitanja)
+    .subscribe((num) => {
+      if( !isNaN(parseFloat(num.toString())) ){
+        this.poeni = 'Bravo osvojili ste: ' + num.toString() + ' poena';
+      }
+      this.prikazi = true;
+      console.log(num.toString() + " poena")
     }, error => {
-      console.log(error);
+      this.poeni = error.toString();
+      this.prikazi = true;
     });
-
   }
 
 
-  // onSelectionChange(odg: Odgovor){
-  //   this.popunjena.forEach(pitanje => {
-  //     if ( pitanje.pitanjeId === odg.pitanjeId) {
-  //       pitanje.odgovori.forEach(odgovor => {
-  //         if (!odg.tacan) {
-  //           odgovor.tacan = false;
-  //         }
-  //         if ( odgovor.odgovorId === odg.odgovorId) {
-  //           console.log(odgovor.vrednost);
-  //           odgovor.tacan = !odgovor.tacan;
-  //           console.log(""+odgovor.tacan);
-  //         }
-  //         // console.log(odgovor.tacan);
-  //       });
-  //     }
-  //   });
-  // }
+  toggle(){
+    this.prikazi = !this.prikazi;
+  }
+
+  close(){
+    if(this.prikazi){
+      this.prikazi = false;
+      this.router.navigate(['/%23rang']);
+    }
+  }
 }

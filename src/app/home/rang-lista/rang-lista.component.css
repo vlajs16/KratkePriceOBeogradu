@@ -77,6 +77,22 @@ th:last-child{
     transform: rotateX(180deg)
 }
 
+.error{
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 3.5em;
+    font-style: italic;
+}
+
+.obavestenje{
+    margin: 0em;
+}
+
+
 @media(min-width: 768px){
     .table{
         width: 70%;

@@ -24,6 +24,13 @@ import { RegistrationServiceService } from './_services/registrationService.serv
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PitanjeService } from './_services/pitanje.service';
+import { PitanjaResolver } from './_resolvers/pitanja.resolver';
+import { PricaService } from './_services/prica.service';
+import { KorisnikService } from './_services/korisnik.service';
+import { PriceResolver } from './_resolvers/price.resolver';
+import { PricaResolver } from './_resolvers/prica.resolver';
+import { KorisnikResolver } from './_resolvers/korisnik.resolver';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -63,7 +70,14 @@ export function tokenGetter() {
       })
    ],
    providers: [
-      RegistrationServiceService
+      RegistrationServiceService,
+      PitanjeService,
+      PitanjaResolver,
+      PricaService,
+      KorisnikService,
+      PriceResolver,
+      PricaResolver,
+      KorisnikResolver
    ],
    bootstrap: [
       AppComponent

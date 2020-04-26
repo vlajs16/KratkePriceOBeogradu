@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Prica } from 'src/app/_model/prica';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-prica',
@@ -8,14 +9,17 @@ import { Prica } from 'src/app/_model/prica';
 })
 export class PricaComponent implements OnInit {
   prica: Prica = {
-    'pricaId' : 1,
+    'pricaID' : 1,
     'naziv': "Formula 1 u Beogradu",
-    'urlVideo': ''
+    'videoUrl': ''
   }
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.prica = data['prica'];
+    })
   }
 
 }

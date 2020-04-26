@@ -57,6 +57,8 @@ video{
     margin: 0 auto!important;
 }
 
-.ng-pristine{
-    
+
+input,
+input:focus{
+    outline: none;
 }

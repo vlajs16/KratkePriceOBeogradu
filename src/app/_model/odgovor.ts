@@ -1,6 +1,4 @@
 export interface Odgovor {
-    pitanjeId?: number;
-    odgovorId: number;
+    odgovorID: number;
     vrednost: string;
-    tacan?: boolean;
 }

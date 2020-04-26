@@ -1,7 +1,8 @@
 import { Odgovor } from './odgovor';
 
 export interface Pitanje {
-    pitanjeId: number;
+    pitanjeID: number;
     vrednost?: string;
-    odgovori: Odgovor[];
+    odgovori?: Odgovor[];
+    odgovor?: Odgovor;
 }

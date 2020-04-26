@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Korisnik } from 'src/app/_model/korisnik';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rang-lista',
@@ -7,17 +8,25 @@ import { Korisnik } from 'src/app/_model/korisnik';
   styleUrls: ['./rang-lista.component.css']
 })
 export class RangListaComponent implements OnInit {
-  korisnici: Korisnik[] = [
-    {imePrezime: 'Mika Mikić', redniBroj: 1, poeni: 240},
-    {imePrezime: 'Pera Perić', redniBroj: 2, poeni: 205},
-    {imePrezime: 'Pera Mikić', redniBroj: 3, poeni: 188},
-    {imePrezime: 'Mika Perić', redniBroj: 4, poeni: 150},
-    {imePrezime: 'Žika Perić', redniBroj: 5, poeni: 140}
-  ]
+  korisnici: Korisnik[];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.korisnici = data['korisnici'];
+    });
+    let i = 1;
+    this.korisnici.forEach(korisnik => {
+      korisnik.redniBroj = i;
+      i++;
+    });
+  }
+
+  provera(){
+    if(this.korisnici === undefined || this.korisnici === null || this.korisnici.length === 0)
+      return false;
+    return true;
   }
 
 }

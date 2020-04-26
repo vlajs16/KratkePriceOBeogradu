@@ -86,6 +86,8 @@ input:focus{
     border-color: rgba(81,56,48,0.5)!important;
 }
 
+
+
 @media(min-width: 830px){
 
     .w-70{
@@ -105,4 +107,6 @@ input:focus{
     .naslov{
         font-size: 3.5em;
     }
+
 }
+
