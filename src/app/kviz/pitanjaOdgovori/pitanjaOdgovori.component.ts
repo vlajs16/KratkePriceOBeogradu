@@ -72,7 +72,7 @@ export class PitanjaOdgovoriComponent implements OnInit {
   close(){
     if(this.prikazi){
       this.prikazi = false;
-      this.router.navigate(['/%23rang']);
+      this.router.navigate(['/']);
     }
   }
 }
