@@ -54,7 +54,7 @@ export class PitanjaOdgovoriComponent implements OnInit {
     this.pitanjaService.sendAnswers(this.authService.decodedToken.nameid, this.pitanja)
     .subscribe((num) => {
       if( !isNaN(parseFloat(num.toString())) ){
-        this.poeni = 'Bravo osvojili ste: ' + num.toString() + ' poena';
+        this.poeni = 'Bravo, osvojili ste: ' + num.toString() + ' poena. \n\nPogledajte da li ste dospeli na rang listu!';
       }
       this.prikazi = true;
       console.log(num.toString() + " poena")

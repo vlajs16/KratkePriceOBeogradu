@@ -62,3 +62,24 @@ input,
 input:focus{
     outline: none;
 }
+
+
+
+.alertify-notifier .ajs-message{
+    color: #fff;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0,5);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.alertify-notifier .ajs-message.ajs-success{
+    background-color: #513830;
+}
+
+.alertify-notifier .ajs-message.ajs-error{
+    background-color: #8f2828;
+}
+
+.alertify-notifier .ajs-message.ajs-warning{
+    background-color: #d6a400;
+}

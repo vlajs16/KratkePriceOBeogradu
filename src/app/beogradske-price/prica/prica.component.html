@@ -1,9 +1,14 @@
-<div class="content">
-  <h1 class="naslov">{{prica.naziv}}</h1>
 
-  <video controls src="{{prica?.videoUrl || 'https://res.cloudinary.com/djoelp3gm/video/upload/v1587747528/A_day_in_Belgrade_-_Motion_Time-lapse_qro5nb.mp4'}}"></video>
-  <p class="text-price">
-    {{prica.text}}
-  </p>
+<div class="content">
+  <span class="fa fa-arrow-left strelica" (click)="metoda(false)"></span>
+  <div class="sredina">
+    <h1 class="naslov">{{prica.naziv}}</h1>
+
+    <video controls src="{{prica?.videoUrl || 'https://res.cloudinary.com/djoelp3gm/video/upload/v1587747528/A_day_in_Belgrade_-_Motion_Time-lapse_qro5nb.mp4'}}"></video>
+    <p class="text-price">
+      {{prica.text}}
+    </p>
+  </div>
+  <span class="fa fa-arrow-right strelica" (click)="metoda(true)"></span>
 </div>
 

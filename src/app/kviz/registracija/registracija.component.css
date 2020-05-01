@@ -34,7 +34,7 @@
 }
 
 /* forma */
-#polje{
+input{
     width: 80%;
     margin: 30px auto 0;
     display: block;
@@ -47,9 +47,13 @@
     transition: all .4s ease-in-out;
 }
 
-#polje:focus{
+input:focus{
     color: white;
     background: none!important;
+}
+
+input:focus{
+    border-color: rgba(81,56,48,0.5)!important;
 }
 
 .ime{
@@ -78,14 +82,25 @@
     color: #513830;
 }
 
-input{
-    transition: all .4s ease-in-out;
+.komentar{
+    width: 80%;
+    margin: 0 auto!important;
+    text-align: center!important;
+    color: white;
+    font-size: 1em;
 }
 
-input:focus{
-    border-color: rgba(81,56,48,0.5)!important;
+.is-invalid{
+    border-color: white!important;
+    text-align: center!important;
+    padding: inherit;
 }
 
+.text{
+    width: 90%;
+    margin: 10px auto;
+    text-align: justify;
+}
 
 
 @media(min-width: 830px){
@@ -93,9 +108,12 @@ input:focus{
     .w-70{
         width: 30%;
     }
-    #polje{
+    input{
         width: 50%;
         font-size: 1.8em;
+    }
+    .komentar{
+        width: 50%;
     }
     .buttons{
         width: 20%;
@@ -107,6 +125,14 @@ input:focus{
     .naslov{
         font-size: 3.5em;
     }
-
+    .text{
+        width: 60%;
+        margin: 30px auto;
+    }
 }
 
+@media(min-width: 1080px){
+    .text{
+        font-size: 1.2em;
+    }
+}

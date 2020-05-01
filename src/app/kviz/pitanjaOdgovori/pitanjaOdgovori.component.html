@@ -40,9 +40,9 @@
   </div>
 </div>
 
-<div class="black" [ngClass]="{'show': prikazi}" (click)="close()">
+<div class="black" [ngClass]="{'show': prikazi}">
   <div class="rezultat">
-    <div class="rezultat-header"><span class="fa fa-times"></span></div>
+    <div class="rezultat-header"  (click)="close()"><span class="fa fa-times"></span></div>
     <div class="rezultat-body">
       <p>{{poeni}}</p>
     </div>
