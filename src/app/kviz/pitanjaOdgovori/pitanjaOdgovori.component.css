@@ -180,6 +180,28 @@ p.vrednost{
     display: block;
 }
 
+.red{
+    background-color: rgba(153, 11, 11, 0.308);
+}
+
+.green{
+    background-color: rgba(11, 153, 11, 0.308);
+}
+
+.red-text{
+    color: rgb(189,13,13);
+    font-size: 1.2em;
+}
+
+.green-text{
+    color: rgb(3,80,3);
+    font-size: 1.2em;
+}
+
+.text-bold{
+    font-weight: 900;
+}
+
 @media(min-width: 768px){
     .surround{
         width: 70%;

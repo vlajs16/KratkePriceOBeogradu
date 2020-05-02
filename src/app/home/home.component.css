@@ -16,3 +16,14 @@ app-citati{
     min-height: 100vh;
     width: 100%;
 }
+
+
+#rang{
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 50;
+    background: transparent;
+    color: transparent;
+}

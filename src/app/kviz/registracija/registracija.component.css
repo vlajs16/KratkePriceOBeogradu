@@ -102,6 +102,10 @@ input:focus{
     text-align: justify;
 }
 
+.rotation{
+    transform: rotateX(180deg);
+}
+
 
 @media(min-width: 830px){
 

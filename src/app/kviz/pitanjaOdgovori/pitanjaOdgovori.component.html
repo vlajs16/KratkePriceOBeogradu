@@ -6,33 +6,29 @@
   
       <form [formGroup]="quizForm" (submit)="sendAnswer()">
   
-        <div class="pitanja" *ngFor="let pitanje of pitanja">
+        <div class="pitanja" *ngFor="let pitanje of pitanja"
+            [ngClass]="{'red': validateForm(pitanje.pitanjeID) || wrongQuestion(pitanje.pitanjeID)
+          , 'green': gotov && !wrongQuestion(pitanje.pitanjeID)}">
           <h3 class="pitanje"> {{pitanje.vrednost}}</h3> 
           
           
              <div *ngFor="let odgovor of pitanje.odgovori">
-              <label class="odg">
+              <label class="odg" [ngClass]="{'text-bold': gotov && !wrongAnswer(pitanje.pitanjeID, odgovor.odgovorID)}">
                 <input type="radio" value="{{odgovor.odgovorID}}" class="odgovor" formControlName="pitanje{{pitanje.pitanjeID}}" >
                 <p class="vrednost">{{odgovor.vrednost}}</p>
+                <i class="fa fa-check ml-2 green-text" *ngIf="gotov && !wrongQuestion(pitanje.pitanjeID) && !wrongAnswer(pitanje.pitanjeID, odgovor.odgovorID)"></i>
+                <i class="fa fa-times ml-2 red-text" *ngIf="gotov && wrongQuestion(pitanje.pitanjeID) && wrongAnswer(pitanje.pitanjeID, odgovor.odgovorID) && selectedByUser(pitanje.pitanjeID, odgovor.odgovorID)"></i>
               </label>
             </div>
   
           
         </div>
-  
-        <!-- <div *ngFor="let quest of pitanja">
-          <label>{{quest.vrednost}}</label>
-          <div>
-            <label *ngFor="let ans of quest.odgovori">
-              <input type="radio" value="{{ans.odgovorID}}" formControlName="pitanje{{quest.pitanjeID}}">
-              {{ans.vrednost}}
-          </label>
-          </div>
-        </div> -->
         
         <div class="form-group button">
-          <button [disabled]="!quizForm.valid" type="submit" class="btn btn-element">Zavrsi kviz</button>
+          <button [disabled]="!quizForm.valid"  *ngIf="!gotov" type="submit" class="btn btn-element">Zavrsi kviz</button>
+          <button *ngIf="gotov" type="button" class="btn btn-element" (click) = "goHome()">Proveri rang listu</button>
         </div>
+        
       </form>
   
   

@@ -26,4 +26,9 @@ export class RegistrationServiceService {
     );
   }
 
+  loggedIn(){
+    const token = localStorage.getItem('token');
+    return !this.jwtHelper.isTokenExpired(token);
+  }
+
 }

@@ -1,5 +1,7 @@
 <app-nav></app-nav>
 <div class="content">
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onDeactivate()"></router-outlet>
 </div>
 <app-footer></app-footer>
+
+ <!-- (activate)="onDeactivate()" -->

@@ -32,6 +32,8 @@ import { PriceResolver } from './_resolvers/price.resolver';
 import { PricaResolver } from './_resolvers/prica.resolver';
 import { KorisnikResolver } from './_resolvers/korisnik.resolver';
 import { AlertifyService } from './_services/alertify.service';
+import { ScrollServiceService } from './_services/scrollService.service';
+import { AuthGuard } from './_guards/auth.guard';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -79,7 +81,9 @@ export function tokenGetter() {
       PriceResolver,
       PricaResolver,
       KorisnikResolver,
-      AlertifyService
+      AlertifyService,
+      ScrollServiceService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent

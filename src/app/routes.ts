@@ -9,12 +9,16 @@ import { KorisnikResolver } from './_resolvers/korisnik.resolver';
 import { PriceResolver } from './_resolvers/price.resolver';
 import { PricaService } from './_services/prica.service';
 import { PricaResolver } from './_resolvers/prica.resolver';
+import { RangListaComponent } from './home/rang-lista/rang-lista.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, runGuardsAndResolvers: 'always', resolve: {korisnici: KorisnikResolver}},
     {path: 'price', component: BgdPriceComponent, runGuardsAndResolvers: 'always', resolve: {price: PriceResolver}},
     {path: 'price/:id', component: PricaComponent, runGuardsAndResolvers: 'always', resolve: {prica: PricaResolver}},
     {path: 'kviz/registracija', component: RegistracijaComponent},
-    {path: 'kviz/pitanja', component: PitanjaOdgovoriComponent, runGuardsAndResolvers: 'always', resolve: { pitanja: PitanjaResolver}},
+    {path: 'kviz/pitanja', component: PitanjaOdgovoriComponent, 
+        runGuardsAndResolvers: 'always', resolve: { pitanja: PitanjaResolver},
+        canActivate: [AuthGuard]},
     {path: '**', component: HomeComponent}
 ]

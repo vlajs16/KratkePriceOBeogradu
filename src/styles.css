@@ -63,6 +63,10 @@ input:focus{
     outline: none;
 }
 
+.rotation{
+    transform: rotateX(180deg);
+}
+
 
 
 .alertify-notifier .ajs-message{

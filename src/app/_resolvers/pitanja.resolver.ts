@@ -14,7 +14,7 @@ export class PitanjaResolver implements Resolve<Pitanje[]>{
         private authService: RegistrationServiceService){}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Pitanje[]>{
-        return this.pitanjeService.getPitanja(this.authService.decodedToken.nameid)
+        return this.pitanjeService.getPitanja(this.authService.decodedToken?.nameid)
         .pipe(
             catchError(error => {
                 console.log("problem");
