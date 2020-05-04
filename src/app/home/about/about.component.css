@@ -19,15 +19,116 @@
     font-size: 3.5em;
 }
 
+.content-about{
+    width: 100%;
+    display: block;
+}
+
+.text-element{
+    width: 100%;
+    display: block;
+}
+
+.img{
+    width: 100%;
+    display: block;
+}
+
+.img img {
+    width: 83%;
+    display: block;
+    margin: 0 auto;
+}
+
 .text{
     width: 90%;
     margin: 10px auto;
     text-align: justify;
 }
 
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn-element{
+    font-size: 1.1em;
+    font-weight: 800;
+    transition: all .4 ease-in-out;
+    outline: unset;
+}
+
+.btn-element:first-child{
+    border: 2px solid #513830;
+    background-color: #513830;
+    color: #F2EEE5;
+}
+
+.btn-element:last-child{
+    margin-left: 20px;
+    border: 2px solid #513830;
+    color: #513830;
+}
+
+.btn-element:first-child:hover{
+    background-color: transparent;
+    color: #513830;
+}
+
+.btn-element:last-child:hover{
+    background-color: #513830;
+    color: #F2EEE5;
+}
+
+.btn-element:active,
+.btn-element:focus{
+    outline: none;
+}
+
+.hide-mob{
+    display: none;
+}
+
 @media(min-width: 768px){
-    .text{
+    .hide-mob{
+        display: flex;
+    }
+
+    .hide-desk{
+        display: none;
+    }
+
+    .naslov{
+        margin-bottom: 5%;
+    }
+
+    .hide-mob .btn-element{
+        width: 150px;
+    }
+    
+    .content-about{
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    .text-element{
         width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .img{
+        width: 30%;
+    }
+
+    .img img{
+        width: 100%;
+        transform: rotate(8deg);
     }
 }
 

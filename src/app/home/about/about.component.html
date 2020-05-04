@@ -1,6 +1,24 @@
 <div class="content">
   <h1 class="naslov">Kratke priče o Beogradu</h1>
-  <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime fugiat debitis est atque molestias unde doloribus vel? Illo dolore adipisci dolor delectus! Et sunt cumque delectus nostrum vel accusamus qui.Quibusdam, minima dolorum voluptas a eius, accusantium rerum recusandae earum dolore libero quisquam! Ab reiciendis, consectetur quaerat mollitia rem explicabo error laboriosam fugit earum perspiciatis minus. Ipsa fugit nostrum sint!</p>
-  <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime fugiat debitis est atque molestias unde doloribus vel? Illo dolore adipisci dolor delectus! Et sunt cumque delectus nostrum vel accusamus qui.Quibusdam, minima dolorum voluptas a eius, accusantium rerum recusandae earum dolore libero quisquam! Ab reiciendis, consectetur quaerat mollitia rem explicabo error laboriosam fugit earum perspiciatis minus. Ipsa fugit nostrum sint!</p>
   
+  <div class="content-about">
+    <div class="text-element">
+      <p class="text">Na web aplikaciji <span>Kratke priče o Beogradu</span> možete pronaći neke od najinteresantnijih
+      i najmističnijih priča o ovom glavnom gradu, koje niste imali prilike da čujete.</p>
+      <p class="text">Nakon što odgledate sve klipove proverite svoje znanje u interaktivnom kvizu i osvojite neku od 
+        vrednih nagrada, na nedeljnom nivou, koje pružaju naši partneri.
+      </p>
+      <div class="buttons hide-mob">
+        <button class="btn-element btn" [routerLink]="['/price']">Priče</button>
+        <button class="btn-element btn" [routerLink]="['/kviz/registracija']">Kviz</button>
+      </div>
+    </div>
+    <div class="img">
+      <img src="../../../assets/images/Poklon2.png" alt="Poklon">
+    </div>
+  </div>
+  <div class="buttons hide-desk">
+    <button class="btn-element btn" [routerLink]="['/price']">Priče</button>
+    <button class="btn-element btn" [routerLink]="['/kviz/registracija']">Kviz</button>
+  </div>
 </div>
