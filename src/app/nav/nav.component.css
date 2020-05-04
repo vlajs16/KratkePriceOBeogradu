@@ -1,12 +1,19 @@
 .navbar{
-    background-color: #513830;
+    /* background-color: #513830; */
+    background-color: transparent;
     font-family: 'Raleway', sans-serif;
+    width: 100%;
     position: relative;
-    width: 100%
+    transition: all ease-in-out .5s;
+}
+
+.brown{
+    background-color: #513830;
 }
 
 .home{
-    position: absolute!important;
+    /* position: absolute!important; */
+    position: fixed;
     z-index: 10;
 }
 
@@ -28,14 +35,19 @@ img{
 }
 
 .nav-item a {
-    color: #6FA1A0;
+    color: #513830;
     transition: all .4s ease-in-out;
 }
 
+.brown .nav-item a {
+    color: #6FA1A0;
+}
+.brown .nav-item a:hover,
 .nav-item a:hover{
     color: #F2EEE5;
 }
 
+.brown .nav-item a:active,
 .nav-item a:active{
     color: #F2EEE5;
 }

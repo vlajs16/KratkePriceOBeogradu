@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top" 
-     [ngClass]="{'home': isHomePage()}">
+     [ngClass]="{'home': isHomePage(), 'brown': scrolledEnough || !isHomePage()}">
   <a class="navbar-brand" [routerLink]="['']">
     <img src="../../assets/images/logo.png" alt="Kratke-price-o-Beogradu-Logo" class="nav-img">
   </a>

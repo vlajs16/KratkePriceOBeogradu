@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavComponent implements OnInit {
   isCollapsed = true;
+  scrolledEnough = false;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -18,6 +19,13 @@ export class NavComponent implements OnInit {
     const url = this.route.snapshot['_routerState'].url;
     if(url === '/') { return true; }
     return false;
+  }
+
+  @HostListener('window:scroll', ["$event"])
+  onWindowScroll(event){
+    if(window.scrollY>350)
+      this.scrolledEnough = true;
+    else this.scrolledEnough = false;
   }
 
 }
