@@ -11,6 +11,10 @@ app-root{
     font-family: 'Raleway', sans-serif;
 }
 
+body{
+    background-color: #513830;
+}
+
 app-root{
     width: 100%;
     display: flex;

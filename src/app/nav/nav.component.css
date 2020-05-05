@@ -60,9 +60,15 @@ img{
     transform: rotate(-20deg) scale3d(1.5,1.5,1.5);
 }
 
+.home.navbar{
+    overflow: unset;
+}
+
 .navbar{
     overflow: hidden;
 }
+
+
 
 @media(min-width: 768px){
     .navbar-nav{
