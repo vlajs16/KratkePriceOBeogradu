@@ -9,12 +9,13 @@
 
 .brown{
     background-color: #513830;
+    overflow: hidden;
 }
 
 .home{
     /* position: absolute!important; */
     position: fixed;
-    z-index: 10;
+    z-index: 100;
 }
 
 img{
@@ -64,11 +65,26 @@ img{
     overflow: unset;
 }
 
+.brown.navbar{
+    overflow: hidden;
+}
+
 .navbar{
     overflow: hidden;
 }
 
+.home.brown.navbar img{
+    height: 60px;
+    width: auto;
+}
 
+.home .navbar-nav .nav-item{
+    font-weight: 600;
+}
+
+.home.brown .navbar-nav .nav-item{
+    font-weight: 300;
+}
 
 @media(min-width: 768px){
     .navbar-nav{
